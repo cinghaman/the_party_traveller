@@ -94,9 +94,9 @@ if ( get_theme_mod( 'illdy_sticky_header_enable', false ) ) {
 			<div class="row">
 				<div class="col-sm-4 col-xs-8">
 
-					<?php
-					if ( ! empty( $logo_image ) ) {
-?>
+			<a class="logo" href=<?php "' . esc_url( home_url() ) . '"?>>
+				<img src="<?php echo template_directory_uri();?>/assets/images/logo@2x.png" alt="The Party Traveller Logo" />
+			</a>
 <?php echo '<a class="logo" href="' . esc_url( home_url() ) . '"><img src="' . esc_url( $logo_image[0] ) . '" /></a>'; } ?>
 
 				</div><!--/.col-sm-2-->
