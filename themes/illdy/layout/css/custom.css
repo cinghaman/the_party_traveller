@@ -152,6 +152,10 @@
 	}
 }
 
+.logo img {
+	max-width: 100%;
+}
+
 @media only screen and (max-width: 320px) {
 	#header .bottom-header .header-button-one {
 		width: 100%;

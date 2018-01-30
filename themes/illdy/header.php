@@ -72,17 +72,6 @@ if ( get_theme_mod( 'illdy_sticky_header_enable', false ) ) {
 	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<?php wp_head(); ?>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113147674-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-113147674-1');
-	</script>
-	<!-- End Global Tag -->
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <?php if ( 1 == $preloader_enable && ! is_customize_preview() ) : ?>
@@ -94,10 +83,9 @@ if ( get_theme_mod( 'illdy_sticky_header_enable', false ) ) {
 			<div class="row">
 				<div class="col-sm-4 col-xs-8">
 
-			<a class="logo" href=<?php "' . esc_url( home_url() ) . '"?>>
-				<img src="<?php echo template_directory_uri();?>/assets/images/logo@2x.png" alt="The Party Traveller Logo" />
+			<a class="logo" href="">
+				<img src="<?php echo get_template_directory_uri();?>/assets/images/logo@2x.png" alt="The Party Traveller Logo" />
 			</a>
-<?php echo '<a class="logo" href="' . esc_url( home_url() ) . '"><img src="' . esc_url( $logo_image[0] ) . '" /></a>'; } ?>
 
 				</div><!--/.col-sm-2-->
 				<div class="col-sm-8 col-xs-4">

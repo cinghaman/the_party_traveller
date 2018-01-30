@@ -485,3 +485,36 @@ function disable_wp_emojicons() {
   add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action( 'init', 'disable_wp_emojicons' );
+
+function disable_emojicons_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+}
+
+function party_add_to_header() {
+?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<?php 
+	if (!current_user_can( 'manage_options' )) {
+?>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113147674-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-113147674-1');
+	</script>
+	<!-- End Global Tag -->
+<?php
+	} else { ?>
+		<!-- Google Analytics code isn't displayed because you're an administrator -->
+	<?php
+	}
+}
+
+add_action( 'wp_head', 'party_add_to_header' );
